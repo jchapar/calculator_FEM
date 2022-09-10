@@ -13,36 +13,35 @@
   </head>
   <body class="font-sans p-0 m-0">
     <!-- Theme One -->
-    <section id="theme-one" class="h-screen w-screen bg-desaturatedBlueOneBG flex items-center justify-center m-0">
+    <section id="calculator" class="h-screen w-screen bg-bgOne flex items-center justify-center m-0">
       <!-- Calculator Container -->
       <div class="calc-container w-[330px]">
         <!-- Header -->
         <div class="header-container flex flex-row items-center justify-between mb-4">
-          <div class="logo text-white">calc</div>
+          <div class="logo text-textHeader">calc</div>
           <div class="theme-switch-container flex flex-row items-end justify-evenly gap-1">
-            <p class="text-white text-sm uppercase mr-1">Theme</p>
+            <p class="text-textHeader text-sm uppercase mr-1">Theme</p>
             <div>
-              <div class="themes flex flex-row space-x-2 items-center justify-center text-white">
+              <div class="themes flex flex-row space-x-2 items-center justify-center text-textHeader">
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>
               </div>
               <div class="flex flex-row space-x-2 items-center justify-center">
-                <input type="checkbox" id="theme-one" name="theme-one" class="" />
-
-                <input type="checkbox" id="theme-two" name="theme-two" class="" />
-                <input type="checkbox" id="theme-three" name="theme-three" class="" />
+                <input type="checkbox" id="theme-standard-toggle" checked name="theme-standard" class="" />
+                <input type="checkbox" id="theme-one-toggle" name="theme-one" class="" />
+                <input type="checkbox" id="theme-two-toggle" name="theme-two" class="" />
               </div>
             </div>
           </div>
         </div>
         <!-- Screen -->
-        <div id="screen" class="w-full h-[88px] text-white bg-desaturatedBlueTwoBG mb-4 p-2 py-4 rounded-lg">
-          <div id="first-number" class="text-4xl text-right" data-previous-number></div>
-          <div id="second-number" class="text-4xl text-right" data-current-number></div>
+        <div id="screen" class="w-full h-[88px] bg-bgTwo mb-4 p-2 py-4 rounded-lg">
+          <div id="first-number" class="text-4xl text-right text-textHeader" data-previous-number></div>
+          <div id="second-number" class="text-4xl text-right text-textHeader" data-current-number></div>
         </div>
         <!-- Keypad -->
-        <div id="keypad" class="w-full bg-desaturatedBlueTwoBG grid grid-cols-4 p-4 rounded-lg gap-2">
+        <div id="keypad" class="w-full bg-bgTwo grid grid-cols-4 p-4 rounded-lg gap-2">
           <button class="btn-primary" data-number>7</button>
           <button class="btn-primary" data-number>8</button>
           <button class="btn-primary" data-number>9</button>

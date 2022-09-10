@@ -5,6 +5,36 @@ const deleteBtn = document.querySelector('[data-delete]');
 const resetBtn = document.querySelector('[data-reset]');
 const previousNumberEl = document.querySelector('[data-previous-number]');
 const currentNumberEl = document.querySelector('[data-current-number]');
+const calculatorEl = document.querySelector('#calculator');
+const toggleStandard = document.querySelector('#theme-standard-toggle');
+const toggleOne = document.querySelector('#theme-one-toggle');
+const toggleTwo = document.querySelector('#theme-two-toggle');
+
+// Theme Switch
+toggleOne.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    toggleStandard.checked = false;
+    toggleTwo.checked = false;
+    calculatorEl.classList.add('theme-one');
+    calculatorEl.classList.remove('theme-two');
+  }
+});
+toggleTwo.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    toggleStandard.checked = false;
+    toggleOne.checked = false;
+    calculatorEl.classList.add('theme-two');
+    calculatorEl.classList.remove('theme-one');
+  }
+});
+toggleStandard.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    toggleOne.checked = false;
+    toggleTwo.checked = false;
+    calculatorEl.classList.remove('theme-two');
+    calculatorEl.classList.remove('theme-one');
+  }
+});
 
 // Calculator Class
 class Calculator {
@@ -14,12 +44,14 @@ class Calculator {
     this.clear();
   }
 
+  // Clear input fields
   clear() {
     this.currentNumber = '';
     this.previousNumber = '';
     this.operation = undefined;
   }
 
+  // Delete a number
   delete() {
     this.currentNumber = this.currentNumber.toString().slice(0, -1);
   }
@@ -85,15 +117,16 @@ class Calculator {
     }
   }
 
+  // Update the screen display
   updateDisplay() {
     this.currentNumberEl.innerText = this.getDisplayNumber(this.currentNumber);
   }
 }
 
-// Init new Calc
+// Init new Calculator ================================================================
 const calculator = new Calculator(previousNumberEl, currentNumberEl);
 
-// Number Buttons event
+// Number Buttons
 numberBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     calculator.appendNum(btn.innerText);
@@ -101,7 +134,7 @@ numberBtns.forEach((btn) => {
   });
 });
 
-//Operation Buttons
+// Operation Buttons
 operationBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     calculator.chooseOperation(btn.innerText);

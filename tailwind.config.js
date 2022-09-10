@@ -6,20 +6,22 @@ module.exports = {
       colors: {
         //Theme 1 ===============
         //Backgrounds
-        desaturatedBlueOneBG: 'hsl(222, 26%, 31%)',
-        desaturatedBlueTwoBG: 'hsl(223, 31%, 20%)',
-        desaturatedBlueThreeBG: 'hsl(224, 36%, 15%)',
+        bgOne: 'hsl(var(--color-bg-one))',
+        bgTwo: 'hsl(var(--color-bg-two))',
+        bgThree: 'hsl(var(--color-bg-three))',
         //Keys
-        desaturatedBlueOneKey: 'hsl(225, 21%, 49%)',
-        desaturatedBlueTwoKey: 'hsl(224, 28%, 35%)',
-        redOneKey: 'hsl(6, 63%, 50%)',
-        redTwoKey: 'hsl(6, 70%, 34%)',
-        grayishOrangeOne: 'hsl(30, 25%, 89%)',
-        grayishOrangeTwo: 'hsl(28, 16%, 65%)',
+        keyOne: 'hsl(var(--color-bg-keyOne))',
+        keyTwo: 'hsl(var(--color-bg-keyTwo))',
+        keyThree: 'hsl(var(--color-bg-keyThree))',
+        keyFour: 'hsl(var(--color-bg-keyFour))',
+        keyFive: 'hsl(var(--color-bg-keyFive))',
+        keySix: 'hsl(var(--color-bg-keySix))',
         //Text
-        darkGrayishBlueText: 'hsl(221, 14%, 31%)',
-        light: 'hsl(0, 0, 100%)',
+        textOne: 'hsl(var(--color-text-one))',
+        textHeader: 'rgb(var(--color-header-text))',
+        textThree: 'hsl(var(--color-text-three))',
         //Theme 2 ===============
+        /*
         //Backgrounds
         lightGray: 'hsl(0, 0%, 90%)',
         grayishRed: 'hsl(0, 5%, 81%)',
@@ -47,6 +49,7 @@ module.exports = {
         //Text
         lightYellow: 'hsl(52, 100%, 62%)',
         veryDarkBlueText: 'hsl(198, 20%, 13%)',
+        */
       },
       fontFamily: {
         sans: ['League Spartan', 'sans-serif'],
