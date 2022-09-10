@@ -20,6 +20,10 @@ class Calculator {
     this.operation = undefined;
   }
 
+  delete() {
+    this.currentNumber = this.currentNumber.toString().slice(0, -1);
+  }
+
   // Appending our number to the current number El
   appendNum(num) {
     if (num === '.' && this.currentNumber.includes('.')) return;
@@ -106,13 +110,19 @@ operationBtns.forEach((btn) => {
 });
 
 // Reset Button
-resetBtn.addEventListener('click', (btn) => {
+resetBtn.addEventListener('click', () => {
   calculator.clear();
   calculator.updateDisplay();
 });
 
+// Delete Button
+deleteBtn.addEventListener('click', () => {
+  calculator.delete();
+  calculator.updateDisplay();
+});
+
 // Equals Button
-equalsBtn.addEventListener('click', (btn) => {
+equalsBtn.addEventListener('click', () => {
   calculator.compute();
   calculator.updateDisplay();
 });
