@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-primary {
+  @apply bg-grayishOrangeOne w-full h-[60px] flex items-center justify-center rounded-lg text-xl shadow-inner shadow-grayishOrangeTwo text-darkGrayishBlueText cursor-pointer;
+}
+.btn-secondary {
+  @apply bg-desaturatedBlueOneKey h-[60px] flex items-center justify-center rounded-lg text-xl shadow-inner shadow-desaturatedBlueTwoKey text-white cursor-pointer;
+}
+.btn-red {
+  @apply bg-redOneKey h-[60px] flex items-center justify-center rounded-lg text-xl shadow-inner shadow-redTwoKey text-white cursor-pointer;
+}
