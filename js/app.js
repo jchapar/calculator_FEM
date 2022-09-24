@@ -6,34 +6,28 @@ const resetBtn = document.querySelector('[data-reset]');
 const previousNumberEl = document.querySelector('[data-previous-number]');
 const currentNumberEl = document.querySelector('[data-current-number]');
 const calculatorEl = document.querySelector('#calculator');
-const toggleStandard = document.querySelector('#theme-standard-toggle');
-const toggleOne = document.querySelector('#theme-one-toggle');
-const toggleTwo = document.querySelector('#theme-two-toggle');
+const toggleStandard = document.querySelector('#theme-standard');
+const toggleOne = document.querySelector('#theme-one');
+const toggleTwo = document.querySelector('#theme-two');
+const radioBtns = document.querySelectorAll('input[type="radio"]');
 
-// Theme Switch
-toggleOne.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    toggleStandard.checked = false;
-    toggleTwo.checked = false;
-    calculatorEl.classList.add('theme-one');
-    calculatorEl.classList.remove('theme-two');
-  }
-});
-toggleTwo.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    toggleStandard.checked = false;
-    toggleOne.checked = false;
-    calculatorEl.classList.add('theme-two');
-    calculatorEl.classList.remove('theme-one');
-  }
-});
-toggleStandard.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    toggleOne.checked = false;
-    toggleTwo.checked = false;
-    calculatorEl.classList.remove('theme-two');
-    calculatorEl.classList.remove('theme-one');
-  }
+// Event listener for Radio button - Theme Toggle
+radioBtns.forEach((radio) => {
+  radio.addEventListener('change', (e) => {
+    if (e.target == toggleStandard) {
+      console.log('toggle standard');
+      calculatorEl.classList.remove('theme-two');
+      calculatorEl.classList.remove('theme-one');
+    } else if (e.target == toggleOne) {
+      console.log('toggle one');
+      calculatorEl.classList.add('theme-one');
+      calculatorEl.classList.remove('theme-two');
+    } else if (e.target == toggleTwo) {
+      console.log('toggle two');
+      calculatorEl.classList.remove('theme-one');
+      calculatorEl.classList.add('theme-two');
+    }
+  });
 });
 
 // Calculator Class
